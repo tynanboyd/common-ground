@@ -1,0 +1,24 @@
+<section class="article-grid">
+  <div class="container">
+    <div class="article-grid__grid">
+      {% for item in component.grid_items %}
+        <article>
+          {% if item.image %}
+            <div class="article-grid__photo-wrapper">
+              <img class="article-grid__photo" src="{{ TimberImage(item.image)|resize(500) }}" alt="{{ item.image.alt }}">
+            </div>
+          {% endif %}
+          {% if item.title %}
+            <h3 class="article-grid__title">{{ item.title }}</h3>
+          {% endif %}
+          {% if item.subtitle %}
+            <span class="article-grid__subtitle">{{ item.subtitle }}</span>
+          {% endif %}
+          {% if item.content %}
+            <div class="article-grid__content">{{ item.content }}</div>
+          {% endif %}
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>

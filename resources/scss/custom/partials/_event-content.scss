@@ -1,0 +1,30 @@
+.event-content {
+  flex: 1;
+  padding: 1rem;
+  max-width: 800px;
+
+  @include MQ(M) {
+    padding: 2rem 4rem 2rem;
+  }
+
+  &__purchase-button {
+    flex: 0 1 auto;
+    margin-left: auto;
+    margin-right: 0;
+  }
+
+  &__content {
+    max-width: 600px;
+  }
+
+  &__performance-type {
+    font-size: 15px;
+    font-weight: normal;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 0.85rem;
+    padding: 6px;
+    margin-bottom: 1rem;
+    display: inline-block;
+  }
+}

@@ -1,0 +1,47 @@
+.event-wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.event-header {
+  display: flex;
+  height: 400px;
+
+  @include MQ(M) {
+    height: 90vh;
+    flex: 1;
+  }
+
+  &__image {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    @include MQ(M) {
+      align-items: center;
+      justify-content: flex-start;
+    }
+  }
+
+  &__title {
+    letter-spacing: 1px;
+    font-size: 2rem;
+    margin: 0;
+    text-align: center;
+
+    @include MQ(M) {
+      font-size: 3rem;
+    }
+  }
+
+  &__title-link {
+    text-decoration: none;
+    color: $color-highlight;
+  }
+}

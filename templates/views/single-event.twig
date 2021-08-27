@@ -1,0 +1,29 @@
+{% set featured_image = TimberImage(post.thumbnail).src %}
+
+
+  <header class="event-header">
+    <div class="event-header__image background-size-cover" style="background-image: url('{{ featured_image|resize(1200) }}');">
+    </div>
+  </header>
+
+  <div class="event-wrapper">
+    <main class="event-content">
+      <header class="event-content__header">
+        <div class="d-flex justify-content-between">
+          <h1 class="event-header__title">{{ post.title }}</h1>
+          {% if post.meta('performance_type') %}
+            <span class="event-content__performance-type">{{ post.meta('performance_type') }}</span>
+          {% endif %}
+        </div>
+        {% if post.content_warning %}
+          {% include 'partials/content-warning.twig' %}
+        {% endif %}
+      </header>
+    {% if post.content %}
+      <div class="event-content__wysiwyg page-content">
+        {{ post.content }}
+      </div>
+    {% endif %}
+    </main>
+  </div>
+
